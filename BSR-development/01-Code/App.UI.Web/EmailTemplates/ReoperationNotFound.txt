@@ -1,8 +1,0 @@
-﻿Dear BSR Project manager
-
-
-	<%PatientFirstName%> <%PatientLastName%> (DOB: <%DOB%>) has no reoperation details recorded between <%PastDate%> and <%CurrentDate%>.
-
-	Follow-up:<%FollowupID%> indicates that this patient has had reoperation in the last 12 months.
-
-	This email has been auto-generated from BSR Database
