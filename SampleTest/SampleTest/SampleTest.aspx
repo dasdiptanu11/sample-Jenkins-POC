@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            This a sample project to test Jenkins build
+            This a sample project to test Jenkins build v1.0
         </div>
         <table>
             <tr>
