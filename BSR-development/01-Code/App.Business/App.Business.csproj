@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE6F333B-A4DF-4EA9-853D-9110BAC5D26E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Business</RootNamespace>
+    <AssemblyName>App.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TEST|AnyCPU'">
+    <OutputPath>bin\TEST\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stag|AnyCPU'">
+    <OutputPath>bin\Stag\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinSCPnet">
+      <HintPath>..\App.Batch\BSR\packages\WinSCP.5.7.4\lib\WinSCPnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspnet_Applications.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership_GetPasswordWithFormat_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership_GetPassword_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership_GetUserByName_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership_GetUserByUserId_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Paths.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationAllUsers.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationPerUser.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Profile.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Profile_GetProperties_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Roles.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_SchemaVersions.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Users.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_UsersInRoles.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_UsersInRoles_RemoveUsersFromRoles_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_WebEvent_Events.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="LookupCustomUnitOfWork.cs" />
+    <Compile Include="LookupUnitOfWorkGenerate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LookupUnitOfWorkGenerate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Devices\Brand_ManufactureList.cs" />
+    <Compile Include="Models\Devices\DeviceList.cs" />
+    <Compile Include="Models\Devices\FavouriteDeviceList.cs" />
+    <Compile Include="Models\ExistingProcedures.cs" />
+    <Compile Include="Models\LookupItem.cs" />
+    <Compile Include="Models\Operation\PatientOperationModel.cs" />
+    <Compile Include="Models\Work Lists\LTFUPatientList.cs" />
+    <Compile Include="Models\Matching\MatchingPatientForMerge.cs" />
+    <Compile Include="Models\MembershipUserRecord.cs" />
+    <Compile Include="Models\Work Lists\MissingDataListItem.cs" />
+    <Compile Include="Models\Work Lists\PatientCallListItem.cs" />
+    <Compile Include="Models\Devices\PatientDeviceListItem.cs" />
+    <Compile Include="Models\Work Lists\PatientExplanatoryStatementWorkListItem.cs" />
+    <Compile Include="Models\Devices\PatientUnknownDeviceListItem.cs" />
+    <Compile Include="Models\Devices\PatientUsingDevice.cs" />
+    <Compile Include="Models\Follow Up\PatientFollowUpDetailsListItem.cs" />
+    <Compile Include="Models\Follow Up\FollowupDetails.cs" />
+    <Compile Include="Models\Follow Up\FollowupEmailDetails.cs" />
+    <Compile Include="Models\Follow Up\PatientFollowupLTFUDetails.cs" />
+    <Compile Include="Models\Operation\PatientOperationListItem.cs" />
+    <Compile Include="Models\PatientOptOffListItem.cs" />
+    <Compile Include="Models\Follow Up\PatientFollowupListItem.cs" />
+    <Compile Include="Models\Operation\PatientOperationDetailsListItem.cs" />
+    <Compile Include="Models\Matching\MatchedPatientItem.cs" />
+    <Compile Include="Models\Matching\MatchedPatientListItem.cs" />
+    <Compile Include="Models\Matching\MatchedPatientPairsListItem.cs" />
+    <Compile Include="Models\Matching\PatientDifferenceDetails.cs" />
+    <Compile Include="Models\Search\PatientSearchFilter.cs" />
+    <Compile Include="Models\Search\PatientSearchListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\SiteInformation\SiteListItem.cs" />
+    <Compile Include="Models\SiteInformation\SiteInfo.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\DeviceRepository.cs" />
+    <Compile Include="Repository\FollowUpRepository.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\IMembershipRepository.cs" />
+    <Compile Include="Repository\MembershipRepository.cs" />
+    <Compile Include="Repository\OperationRepository.cs" />
+    <Compile Include="Repository\PatientRepository.cs" />
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Report_RevisionSurgerySummaryReport_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Complications.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Complications_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Device.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_DeviceBrand.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_DeviceBrand_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Device_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_FollowUp.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_FollowUpCall.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_FollowUp_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryEmail.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryEmail_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryExtract.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryExtract_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryLogin.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_HistoryLogin_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_IgnorePatients.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_IgnorePatients_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_MonitorFollowUp.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Patient.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientComplications.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientComplications_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientOperation.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientOperationDeviceDtls.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientOperationDeviceDtls_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_PatientOperation_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Patient_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Site.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Site_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_URN.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_URN_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_User.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserFavouriteDeviceDetails.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserFavouriteDeviceDetails_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_User_Audit.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_AboriginalStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_AttemptedCalls.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_BandType.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_ButtressType.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_CauseOfDeath.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_Complications.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_Country.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_DeathRelatedToSurgery.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_DeviceManufacturer.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_DeviceType.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_DiabetesStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_DiabetesTreatment.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_FollowUpCallResult.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_FollowUpPeriod.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_FollowUp_FUVal.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_Gender.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_HealthStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_IndigenousStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_OperationStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_OperationType.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_OptOffStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_OptOutReason.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_PatientGroup.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_PortFixationMethod.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_Procedure.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_ReasonBowelObstructionOperative.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_ReasonPort.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_ReasonSlip.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_SecurityQuestions.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_SentinelEvent.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_SiteStatus.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_SiteType.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_State.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_Title.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_YesNo.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_YesNoNotknownNotStated.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_YesNoNotknownRecorded.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tlkp_YesNoNotStated.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_FollowUp_WorkList_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_FollowUp_WorkList_Result1.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_Matching_Patients_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_Matching_Patient_List_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_Missing_DataList_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_Missing_DataList_Result1.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ufn_Patient_CallWorkList_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkGenerate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitOfWorkGenerate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_BenchMarkingReport_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsentReport_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_CreateFollowUpsAlerts_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_CreateFollowUps_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_Patient_CallWorkList_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_Report_RevisionSurgerySummaryReport_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_Report_RevSurgSumm_ReOp_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_RSSR_ReasonsForPort_ReOP_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_RSSR_ReasonsForSlip_ReOP_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_RSSR_ReOpReason_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonReport_SentinelEveCnt1_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonReport_SentinelEveCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_DiaxCnt2_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_DiaxCnt3_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_DiaxCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_FollowUpCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_OpProcAndOpCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_PatCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_ReasonsForPort_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_ReasonsForPort_SE_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_ReasonsForSlip_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_ReasonsForSlip_SE_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_Reasons_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_ReOpReason_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_SelfReportedWtCnt_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_SurgeonRpt_SentinelEveReason_Result.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Applications.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_MembershipUsers.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Profiles.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Roles.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_Users.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_UsersInRoles.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Paths.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_Shared.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_aspnet_WebPartState_User.cs">
+      <DependentUpon>BusinessEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="BusinessEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BusinessEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BusinessEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusinessEntities.edmx</DependentUpon>
+      <LastGenOutput>BusinessEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BusinessEntities.edmx.diagram">
+      <DependentUpon>BusinessEntities.edmx</DependentUpon>
+    </None>
+    <None Include="BusinessEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusinessEntities.edmx</DependentUpon>
+      <LastGenOutput>BusinessEntities.cs</LastGenOutput>
+    </None>
+    <None Include="LookupUnitOfWorkGenerate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LookupUnitOfWorkGenerate.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UnitOfWorkGenerate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitOfWorkGenerate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WinSCP.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

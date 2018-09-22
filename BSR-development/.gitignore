@@ -1,0 +1,5 @@
+bin
+obj
+/01-Code/App.UI.Web/AppLog.txt
+*.suo
+/01-Code/App.UI.Web/AppLog.txt

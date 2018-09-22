@@ -1,0 +1,19 @@
+
+*****		This is an automatic email, please do not reply directly to this email.		***** 
+
+Dear <%UserFullName%>,
+
+Your <%PROJECT_NAME%> account has been created.
+You may now log in with the following username and password: 
+
+User name: <%UserName%>
+Password: <%Password%>
+
+This is a one-time password.You will be asked to change the password when you first logon.
+To log on visit <%PROJECT_URL%>
+
+Please contact <%PROJECT_NAME%> Administrator should you require further assistance.
+
+
+Best regards,
+<%PROJECT_NAME%>

@@ -1,0 +1,5 @@
+Dear BSR Project manager
+
+<%PatientFirstName%> <%PatientLastName%>, <%DOB%>, <%RegistryId%> (RegistryId) originally at <%PreHospitalName%> has now been registered at <%CurrHospitalName%> by <%UserName%>
+
+This email has been auto-generated from BSR Database

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title=""  url="" roles="*">
+
+    <siteMapNode title="Dashboard" url="~/Views/Forms/SurgeonDashboard.aspx" roles="SURGEON, DATACOLLECTOR"/>
+
+
+    <siteMapNode title="Patient" roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON">
+      <siteMapNode  title="Search Patient" url="~/Views/Forms/PatientSearch.aspx"  roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Patient Details" url="~/Views/Forms/PatientDetails.aspx"   roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON"/>
+      <siteMapNode title="Patient Demographics"  url="~/Views/Forms/Patient.aspx" roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON"/>
+      <siteMapNode title="Operation Details"  url="~/Views/Forms/OperationDetails.aspx" roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON"/>
+      <siteMapNode title="Follow Up" url="~/Views/Forms/FollowUp.aspx" roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON"/>
+    </siteMapNode>
+
+    <siteMapNode title="Devices" roles="ADMINREGISTRY,ADMINCENTRAL">
+      <siteMapNode title="Manage Devices" url="~/Views/Forms/ManageDevice.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Search Device" url="~/Views/Forms/PatientDeviceSearch.aspx"  roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Unknown Device List" url="~/Views/Forms/PatientUnknownDeviceList.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+    </siteMapNode>
+
+    <siteMapNode title="Work Lists" roles="ADMINREGISTRY,ADMINCENTRAL,SURGEON,DATACOLLECTOR">
+      <siteMapNode title="Explanatory Statement Work List"   url="~/Views/Forms/ExplanatoryStatementWorkList.aspx" roles="ADMINREGISTRY, ADMINCENTRAL"/>
+      <siteMapNode title="Missing Data Work List"   url="~/Views/Forms/MissingDataWorkList.aspx"  roles="ADMINREGISTRY,ADMINCENTRAL,DATACOLLECTOR"/>
+      <siteMapNode title="Follow Up Work List"   url="~/Views/Forms/FollowUpWorkList.aspx"  roles="ADMINREGISTRY, ADMINCENTRAL"/>
+      <siteMapNode title="LTFU Patient List"   url="~/Views/Forms/PatientLTFUList.aspx"  roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Patient Opt Off List" url="~/Views/Forms/PatientOptOffList.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Call Center Work List" url="~/Views/Forms/PatientCallScreen.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+    </siteMapNode>
+
+
+    <siteMapNode title="Reports" roles="ADMINREGISTRY,ADMINCENTRAL">
+      <siteMapNode title="Benchmarking (Graph)" url="~/Views/Reports/BenchmarkingReport.aspx" roles="ADMINREGISTRY,ADMINCENTRAL" />
+      <siteMapNode title="Surgeon Report" url="~/Views/Reports/SurgeonReport.aspx"  roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Revision Surgery Report" url="~/Views/Reports/RevisionSurgerySummaryReport.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Consent List" url="~/Views/Reports/ConsentReportList.aspx" roles="ADMINREGISTRY,ADMINCENTRAL" />
+    </siteMapNode>
+
+
+    <siteMapNode title="Admin" roles="ADMINREGISTRY, ADMINCENTRAL">
+      <siteMapNode title="Manage Sites" url="~/Views/Admin/ManageSite.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Manage User Accounts" url="~/Views/Admin/UserList.aspx" roles="ADMINREGISTRY,ADMINCENTRAL" />
+      <siteMapNode title="Merge Patients" url="~/Views/Forms/ManagePatients.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Bulk Load Patients" url="~/Views/Forms/BulkLoadPatients.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+      <siteMapNode title="Bulk Load Operations" url="~/Views/Forms/BulkLoadOperations.aspx" roles="ADMINREGISTRY,ADMINCENTRAL"/>
+    </siteMapNode>
+
+    <siteMapNode title="Settings"  roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON">
+      <siteMapNode title="Change Password" url="~/Views/AccountSetting/ChangePassword.aspx" />
+      <siteMapNode title="Change Security Question" url="~/Views/AccountSetting/ChangeSecurityQuestion.aspx" />
+      <siteMapNode title="Change Email" url="~/Views/AccountSetting/ChangeEmail.aspx" />
+      <siteMapNode title="Device Favourites" url="~/Views/Forms/DeviceFavourite.aspx" />
+    </siteMapNode>
+
+    <siteMapNode title="FAQ" url="~/Documents/FAQ.pdf" description="FAQ" roles="ADMINREGISTRY,DATACOLLECTOR,ADMINCENTRAL,SURGEON" >
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>
