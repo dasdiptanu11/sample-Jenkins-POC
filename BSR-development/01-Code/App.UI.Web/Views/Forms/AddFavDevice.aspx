@@ -96,7 +96,7 @@
                     ContentCssClass="accordionContent" FadeTransitions="true" SuppressHeaderPostbacks="true" TransitionDuration="250" FramesPerSecond="40" RequireOpenedPane="false">
                     <Panes>
                         <ajaxToolkit:AccordionPane ID="SurgeonAndSite_AccordionPane" runat="server" Width="500px">
-                            <Header>Surgeon and Sites</Header>
+                            <Header>Surgeon & Sites</Header>
                             <Content>
                                 <br />
                                 <asp:Panel ID="SurgeonDropDowntable" runat="server" Visible="false" Style="padding-left: 20px;">
