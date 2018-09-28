@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>Sample Jenkins test project</h1>
         <div>
             This a sample project to test Jenkins build v1.0
         </div>
