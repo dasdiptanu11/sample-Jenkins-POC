@@ -41,6 +41,7 @@
                 </td>
             </tr>
         </table>
+        <asp:Label ID="Label1" runat="server" Text="Sample Test of Master Branch"></asp:Label>
         
     </form>
 </body>
