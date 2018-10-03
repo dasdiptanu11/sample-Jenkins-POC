@@ -11,7 +11,7 @@
         <h1>Sample Jenkins test project</h1>
         <div>
             This a sample project to test Jenkins build v1.0
-            This is code of branch v3 Last change at 17:07
+            This is code of branch v3 Last change at 17:26
         </div>
         <table>
             <tr>
@@ -28,6 +28,7 @@
                     <asp:ListItem>-</asp:ListItem>
                     <asp:ListItem>*</asp:ListItem>
                     <asp:ListItem>/</asp:ListItem>
+                    <asp:ListItem>=</asp:ListItem>
                 </asp:DropDownList></td></tr>
             <tr>
                 <td> <asp:TextBox ID="input2" runat="server"></asp:TextBox></td>
