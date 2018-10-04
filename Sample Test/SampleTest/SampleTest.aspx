@@ -10,8 +10,8 @@
     <form id="form1" runat="server">
         <h1>Sample Jenkins test project</h1>
         <div>
-            This a sample project to test Jenkins build v1.0
-            Code of branch Master - last change at 16:58pm.
+            This a sample project to test Jenkins build v3.0
+            Code of branch Master
         </div>
         <table>
             <tr>
